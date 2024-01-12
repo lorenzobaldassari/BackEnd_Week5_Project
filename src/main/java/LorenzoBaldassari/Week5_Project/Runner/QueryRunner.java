@@ -4,8 +4,11 @@ import LorenzoBaldassari.Week5_Project.Dao.EdificioService;
 import LorenzoBaldassari.Week5_Project.Dao.PostazioneService;
 import LorenzoBaldassari.Week5_Project.Dao.PrenotazioneService;
 import LorenzoBaldassari.Week5_Project.Dao.UtenteService;
+import LorenzoBaldassari.Week5_Project.Entities.Edificio;
 import LorenzoBaldassari.Week5_Project.Entities.Enum.TipoPostazione;
 import LorenzoBaldassari.Week5_Project.Entities.Postazione;
+import LorenzoBaldassari.Week5_Project.Entities.Prenotazione;
+import LorenzoBaldassari.Week5_Project.Entities.Utente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -27,16 +30,32 @@ public class QueryRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        System.out.println(utenteService.findById(1));
 
-//        List<Postazione> lis= postazioneService.findByDescrizione("luogo commerciale");
-//        lis.forEach(elem->System.out.println(elem));
-        System.out.println(edificioService.findById(1));
-        System.out.println(prenotazioneService.findById(1));
-//        prenotazioneService.findByddate();
-       List<Postazione> lis= postazioneService.findByCodice("2653aa1e-6431-4d6b-ad73-adc8a724d18f");
-       lis.forEach(elem->System.out.println(elem));
 
+//        ------------query ricerca per tipoPostazione--------------
+
+//        List<Postazione> lista= postazioneService.filterByTipoPostazione(TipoPostazione.OPENSPACE);
+//        System.out.println("con OPENSPACE ci sono");
+//        lista.forEach(elem->System.out.println(elem));
+
+        //        ------------query ricerca per citta--------------
+
+//        List<Postazione> lista2=postazioneService.filterByCitta("milano");
+//        System.out.println("a milano ci sono");
+//        lista2.forEach(elem->System.out.println(elem));
+
+
+//        ---------query per controllare se una data e disponibile-----------
+
+//        IL CONTROLLO E FATTO DIRETTAMENTE SUL SALVATAGGIO
+//        ESEMPIO se inseriamo una data gia presa
+//        ATTENZIONE uuid e id sono da prendere dal db perche veongono generati, quelli presenti
+//        sono placeholder
+
+//        Postazione postFromDb= postazioneService.findByUUID("686c8a7a-c8fd-4635-a072-c08224165321");
+//        Utente utenteFromDb=utenteService.findById(1);
+//        Prenotazione prenot4= new Prenotazione(LocalDate.now(),utenteFromDb,postFromDb);
+//        prenotazioneService.save(prenot4);
 
 
     }

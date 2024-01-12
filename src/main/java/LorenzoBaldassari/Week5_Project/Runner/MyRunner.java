@@ -9,16 +9,12 @@ import LorenzoBaldassari.Week5_Project.Entities.Enum.TipoPostazione;
 import LorenzoBaldassari.Week5_Project.Entities.Postazione;
 import LorenzoBaldassari.Week5_Project.Entities.Prenotazione;
 import LorenzoBaldassari.Week5_Project.Entities.Utente;
-import LorenzoBaldassari.Week5_Project.Week5ProjectApplication;
 import com.github.javafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class MyRunner implements CommandLineRunner {
@@ -47,6 +43,11 @@ public class MyRunner implements CommandLineRunner {
         Prenotazione prenot1= new Prenotazione(LocalDate.now(),utente1,postazione1);
         Prenotazione prenot2= new Prenotazione(LocalDate.now().plusDays(1),utente1,postazione2);
         Prenotazione prenot3= new Prenotazione(LocalDate.now().plusDays(4),utente2,postazione3);
+
+
+//        ----DECOMMENTA PER POPOLARE IL DB-----
+
+
 //        edificioService.save(edificio1);
 //        edificioService.save(edificio2);
 //        edificioService.save(edificio3);
@@ -58,6 +59,9 @@ public class MyRunner implements CommandLineRunner {
 //        prenotazioneService.save(prenot1);
 //        prenotazioneService.save(prenot2);
 //        prenotazioneService.save(prenot3);
+
+
+
 
 
 

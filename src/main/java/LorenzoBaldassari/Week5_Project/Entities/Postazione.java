@@ -19,6 +19,7 @@ import java.util.UUID;
 public class Postazione {
     @Id
     @UuidGenerator
+    @Column(unique = true)
     private UUID codiceUnivoco;
 
     private String descrizione;

@@ -1,16 +1,12 @@
 package LorenzoBaldassari.Week5_Project.Dao;
 
-import LorenzoBaldassari.Week5_Project.Entities.Prenotazione;
 import LorenzoBaldassari.Week5_Project.Entities.Utente;
 import LorenzoBaldassari.Week5_Project.Exceptions.ItemNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
-@PropertySource("application.properties")
-@Transactional
 public class UtenteService {
 
     @Autowired
