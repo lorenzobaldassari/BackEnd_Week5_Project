@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Entity
 @Getter
-@ToString
 @NoArgsConstructor
 @Table(name = "edificio")
 public class Edificio {
@@ -52,5 +51,15 @@ public class Edificio {
 
     public void setPostazione(Postazione postazione) {
         this.postazione = postazione;
+    }
+
+    @Override
+    public String toString() {
+        return "Edificio{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", indirizzo='" + indirizzo + '\'' +
+                ", citta='" + citta + '\'' +
+                '}';
     }
 }

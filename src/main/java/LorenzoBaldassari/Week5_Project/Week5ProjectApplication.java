@@ -18,12 +18,13 @@ import java.time.LocalDate;
 @SpringBootApplication
 public class Week5ProjectApplication {
 
-	public static void main(String[] args) {
 
+	public static void main(String[] args) {
 		SpringApplication.run(Week5ProjectApplication.class, args);
 
 
 
+		System.out.println("fine!");
 
 	}
 

@@ -8,12 +8,12 @@ import lombok.ToString;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Getter
 @NoArgsConstructor
-@ToString
 @Entity
 @Table(name="postazione")
 public class Postazione {
@@ -26,26 +26,26 @@ public class Postazione {
     @Enumerated(EnumType.STRING)
     private TipoPostazione tipoPostazione;
 
-    private int numeroMaxPrenotazioni;
+    private int numeroMaxOccupanti;
 
     @OneToOne
     @JoinColumn(name = "id_edificio")
     private Edificio edificio;
 
     @OneToMany(mappedBy = "postazione")
-    private List<Prenotazione> listaPrenotazioni;
+    private List<Prenotazione> listaPrenotazioni= new ArrayList<>();
 
-    public Postazione(String descrizione, TipoPostazione tipoPostazione, int numeroMaxPrenotazioni, Edificio edificio) {
+    public Postazione(String descrizione, TipoPostazione tipoPostazione, int numeroMaxOccupanti, Edificio edificio) {
         this.descrizione = descrizione;
         this.tipoPostazione = tipoPostazione;
-        this.numeroMaxPrenotazioni = numeroMaxPrenotazioni;
+        this.numeroMaxOccupanti = numeroMaxOccupanti;
         this.edificio = edificio;
     }
 
-    public Postazione(String descrizione, TipoPostazione tipoPostazione, int numeroMaxPrenotazioni, Edificio edificio, List<Prenotazione> listaPrenotazioni) {
+    public Postazione(String descrizione, TipoPostazione tipoPostazione, int numeroMaxOccupanti, Edificio edificio, List<Prenotazione> listaPrenotazioni) {
         this.descrizione = descrizione;
         this.tipoPostazione = tipoPostazione;
-        this.numeroMaxPrenotazioni = numeroMaxPrenotazioni;
+        this.numeroMaxOccupanti = numeroMaxOccupanti;
         this.edificio = edificio;
         this.listaPrenotazioni = listaPrenotazioni;
     }
@@ -58,8 +58,8 @@ public class Postazione {
         this.tipoPostazione = tipoPostazione;
     }
 
-    public void setNumeroMaxPrenotazioni(int numeroMaxPrenotazioni) {
-        this.numeroMaxPrenotazioni = numeroMaxPrenotazioni;
+    public void setNumeroMaxPrenotazioni(int numeroMaxOccupanti) {
+        this.numeroMaxOccupanti = numeroMaxOccupanti;
     }
 
     public void setEdificio(Edificio edificio) {
@@ -73,4 +73,15 @@ public class Postazione {
         this.listaPrenotazioni.add(prenotazioni);
     }
 
+
+    @Override
+    public String toString() {
+        return "Postazione{" +
+                "codiceUnivoco=" + codiceUnivoco +
+                ", descrizione='" + descrizione + '\'' +
+                ", tipoPostazione=" + tipoPostazione +
+                ", numeroMaxOccupanti=" + numeroMaxOccupanti +
+                ", edificio=" + edificio +
+                '}';
+    }
 }
